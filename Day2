@@ -28,6 +28,21 @@ print(lst[:5])# [38, 19, 11, 3, 6]
 lst_sample = sample(lst,10)
 print(lst_sample) # [33, 40, 35, 49, 24, 15, 48, 29, 37, 24]
 
+字符串 stringbook 旋转后得到 bookstring，写一段代码验证 str1 是否为 str2 旋转得到。
+转化为判断：str1 是否为 str2+str2 的子串。
+def is_rotation(s1: str, s2: str) -> bool:
+    if s1 is None or s2 is None:
+        return False
+    if len(s1) != len(s2):
+        return False
+
+    def is_substring(s1: str, s2: str) -> bool:
+        return s1 in s2
+    return is_substring(s1, s2 + s2)
+ 
+
+
+
 
 
 
